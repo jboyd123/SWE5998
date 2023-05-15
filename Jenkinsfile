@@ -8,8 +8,9 @@ pipeline {
                     docker build --file Dockerfile
                     """
                 }
-            }
-        }
+            }   
+        }    
+    }
     post{
         failure{
             slackSend( channel: "#Jenkins", token: "slack_webhook token", color: "good", message: "${custom_msg1()}")
