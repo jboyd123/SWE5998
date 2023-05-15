@@ -1,5 +1,5 @@
-FROM ubuntu:20.04
+FROM alpine
 
-RUN echo 'Hello World!'
+CMD ["/bin/echo 'Hello, world!'"]
 
-WORKDIR /usr/src
+ENTRYPOINT ["/bin/sh", "-c"]
