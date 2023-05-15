@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     bat """
+                    ls
                     docker build Dockerfile
                     """
                 }
