@@ -9,7 +9,7 @@ pipeline {
                 script {
                     bat """
                     dir
-                    docker build -f Dockerfile . --tag SWE5998-${env.version}
+                    docker build -f Dockerfile . --tag localhost:5000/SWE5998-${env.version}
                     """
                 }
             }   
