@@ -1,10 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo "Hello world"
-                    }
+                script {
+                    sh """
+                    docker build --file Dockerfile
+                    """
+                }
             }
         }
     post{
