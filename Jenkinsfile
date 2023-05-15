@@ -9,7 +9,7 @@ pipeline {
                 script {
                     bat """
                     dir
-                    docker build -f Dockerfile . --tag SWE5998-${env.VER}
+                    docker build -f Dockerfile . --tag SWE5998-${VER}
                     """
                 }
             }   
