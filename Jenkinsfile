@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             environment{
-                TAG = "${readfile('version').trim() + '-' + sh(script: 'echo `date +%Y%m%d%H%M%S`', returnStdout: true).trim()}"
+                version = "1.0.0"
             }
             steps {
                 script {
                     bat """
                     dir
-                    docker build -f Dockerfile . --tag SWE5998-${env.TAG}
+                    docker build -f Dockerfile . --tag SWE5998-${env.VER}
                     """
                 }
             }   
