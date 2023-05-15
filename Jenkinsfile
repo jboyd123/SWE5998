@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build and Run') {
             environment{
                 version = "1.0.0"
             }
             steps {
                 script {
                     bat """
-                    dir
                     docker build -f Dockerfile . --tag localhost:5000/swe5998:${env.version}
+                    docker run localhost:5000/swe5998:${env.version}
                     """
                 }
             }   
