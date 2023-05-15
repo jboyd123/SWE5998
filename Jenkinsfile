@@ -6,7 +6,7 @@ pipeline {
                 script {
                     bat """
                     dir
-                    docker build Dockerfile
+                    docker build -f Dockerfile
                     """
                 }
             }   
