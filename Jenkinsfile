@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    triggers {
-      githubPush()
-    }
+    triggers { githubPush() }
     stages {
         stage('Build and Run') {
             environment{
