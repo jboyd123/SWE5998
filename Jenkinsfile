@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-      github(
+      githubPush(
         triggerOnPush: true,
         triggerOnMergeRequest: true,
         triggerOpenMergeRequestOnPush: "source",
