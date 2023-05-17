@@ -1,5 +1,13 @@
 pipeline {
     agent any
+    triggers {
+      github(
+        triggerOnPush: true,
+        triggerOnMergeRequest: true,
+        triggerOpenMergeRequestOnPush: "source",
+        branchFilterType: "All",
+        triggerOnNoteRequest: false)
+    }
     stages {
         stage('Build and Run') {
             environment{
